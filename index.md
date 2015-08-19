@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Hello World!
+title: Fiat lux
 tagline: Supporting tagline
 ---
 {% include JB/setup %}
@@ -10,8 +10,18 @@ Read [eversterd](https://eversterd.github.io)
 
 Here's a sample "posts list".
 
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+<div id="content">
+    <div class="text-post posts">
+
+	{% for post in site.posts limit:5 %}
+
+		<h2><a class="post_title" href="{{ post.url }}">{{post.title}}</a></h2>
+
+		<div class="caption rich-content">
+			{{ post.content }}
+		</div>
+
+	{% endfor %}
+
+    </div>
+</div>
